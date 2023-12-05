@@ -5,6 +5,8 @@ const Card = (props) => {
   let feelsLikeTemperature = props.feelsLike - 273.15;
   let date = new Date();
 
+  let iconurl = `https://openweathermap.org/img/w/${props.icon}.png`;
+
   const months = [
     "January",
     "February",
@@ -28,10 +30,14 @@ const Card = (props) => {
     <div className="card">
       <div className="nav">
         {props.name}, {props.country}
+        <div className="icon">
+              <img src={iconurl} alt="" />
+        </div>
         <div className="date">
           {day}, {month} {year}
         </div>
       </div>
+      
       <div className="card-container">
         <div className="card-main">
           <div className="card-items">
@@ -60,6 +66,7 @@ const Card = (props) => {
               {props.wind * (1.609).toFixed()} km/h
             </div>
           </div>
+          
         </div>
       </div>
     </div>

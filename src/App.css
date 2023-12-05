@@ -146,6 +146,12 @@ footer {
   background-color: #c4c4c4;
 }
 
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 300px) {
   #second {
     height: 100%;

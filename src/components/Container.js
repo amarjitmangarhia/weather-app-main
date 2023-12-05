@@ -17,12 +17,10 @@ const Container = (props) => {
       setError(true);
     }
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=7f9615fa6c62a35d6e5b0fb4afa2d465`;
-    console.log(url)
     const response = await fetch(url);
     if (!response.ok) {
       setError(true);
       setShow(false);
-      console.log(response.statusText);
       return;
     }
     const data = await response.json();
@@ -37,6 +35,7 @@ const Container = (props) => {
       airPressure: data.main.pressure,
       latitude: data.coord.lat,
       longitude: data.coord.lon,
+      icon: data.weather[0].icon
     });
     setShow(true);
     setCityName("");
@@ -55,6 +54,7 @@ const Container = (props) => {
         wind={weatherData.wind}
         temp={weatherData.temp}
         feelsLike={weatherData.feelsLike}
+        icon = {weatherData.icon}
       />
     );
   } else if (error) {
