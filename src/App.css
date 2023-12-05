@@ -8,7 +8,8 @@
 }
 
 .container {
-  background-color: #e3dbdb;
+  background: linear-gradient(to bottom, #6D6CF9, white);
+
 
   height: 100vh;
   width: 400px;
@@ -65,13 +66,16 @@ input[type="text"] {
   width: 50px;
 }
 
+
+
 #second {
   background-color: #e3dbdb;
   display: flex;
-  height: 380px;
-  display: flex;
   justify-content: center;
   align-items: center;
+  height: 450px;
+
+  background: linear-gradient(to bottom, #6D6CF9, white);
 }
 
 .card {
